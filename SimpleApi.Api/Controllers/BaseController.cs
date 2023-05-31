@@ -22,5 +22,12 @@ namespace SimpleApi.Api.Controllers
             response.AddErrors(message);
             return StatusCode((int)HttpStatusCode.BadRequest, response);
         }
+
+        protected IActionResult ValidationErrorResponse(List<string> messages)
+        {
+            var response = new BaseApiResponse<string>();
+            messages.ForEach(x => response.AddErrors(x));
+            return StatusCode((int)HttpStatusCode.BadRequest, response);
+        }
     }
 }

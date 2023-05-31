@@ -5,6 +5,9 @@ using SimpleApi.Domain.Interfaces;
 using SimpleApi.Data.Repositories;
 using AutoMapper;
 using SimpleApi.Application.Mappings;
+using FluentValidation;
+using SimpleApi.Application.DTOs.RequestDTO;
+using SimpleApi.Application.Validators;
 
 namespace SimpleApi.Infrastructure
 {
@@ -27,7 +30,11 @@ namespace SimpleApi.Infrastructure
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            //validators
+            services.AddScoped<IValidator<ProductRequestDTO>, ProductRequestDTOValidator>();
+            services.AddScoped<IValidator<CategoryRequestDTO>, CategoryRequestDTOValidator>();
 
         }
+
     }
 }

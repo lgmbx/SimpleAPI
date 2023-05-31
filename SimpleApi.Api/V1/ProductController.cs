@@ -4,6 +4,7 @@ using SimpleApi.Application.DTOs.RequestDTO;
 using SimpleApi.Application.Interfaces;
 using SimpleApi.Application.Models.BaseReponse;
 using SimpleApi.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 
 namespace SimpleApi.Api.V1
@@ -37,7 +38,7 @@ namespace SimpleApi.Api.V1
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(BaseApiResponse<ProductResponseDTO>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(BaseApiResponse<string>), (int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById([Required, FromRoute] int id)
         {
             try
             {
@@ -69,7 +70,7 @@ namespace SimpleApi.Api.V1
         [HttpPut("{id:int}")]
         [ProducesResponseType(typeof(BaseApiResponse<ProductResponseDTO>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(BaseApiResponse<string>), (int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Update(int id, [FromBody] ProductRequestDTO product)
+        public async Task<IActionResult> Update([Required, FromRoute] int id, [FromBody] ProductRequestDTO product)
         {
             try
             {
@@ -85,7 +86,7 @@ namespace SimpleApi.Api.V1
         [HttpDelete("{id:int}")]
         [ProducesResponseType(typeof(BaseApiResponse<bool>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(BaseApiResponse<string>), (int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete([Required, FromRoute] int id)
         {
             try
             {
