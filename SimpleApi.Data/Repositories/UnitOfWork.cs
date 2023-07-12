@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SimpleApi.Data.Context;
+﻿using SimpleApi.Data.Context;
 using SimpleApi.Domain.Interfaces;
 
 namespace SimpleApi.Data.Repositories

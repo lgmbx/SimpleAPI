@@ -73,8 +73,8 @@ namespace SimpleApi.Data.Repositories
 
         public void Update(T entity)
         {
-            _dbSet.Update(entity);
-            _dbSet.Entry(entity).State = EntityState.Modified;
+             _dbSet.Update(entity);
+             _dbSet.Entry(entity).State = EntityState.Modified;
         }
 
         public void UpdateRange(IEnumerable<T> entities)

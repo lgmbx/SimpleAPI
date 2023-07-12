@@ -8,7 +8,9 @@ namespace SimpleApi.Application.Validators
 
         public CategoryRequestDTOValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Name is required");
         }
 
     }

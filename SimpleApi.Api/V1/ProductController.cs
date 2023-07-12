@@ -3,7 +3,6 @@ using SimpleApi.Api.Controllers;
 using SimpleApi.Application.DTOs.RequestDTO;
 using SimpleApi.Application.Interfaces;
 using SimpleApi.Application.Models.BaseReponse;
-using SimpleApi.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 

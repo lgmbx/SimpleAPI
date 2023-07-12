@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleApi.Application.Models;
 using SimpleApi.Application.Models.BaseReponse;
 using System.Net;
 

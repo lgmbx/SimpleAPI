@@ -34,7 +34,7 @@ namespace SimpleApi.Application.Services
                 baseResponse.AddErrors("Category not found");
                 return baseResponse;
             }
-            
+
             var product = mapper.Map<Product>(requestDto);
             
             productRepository.Add(product);
@@ -89,6 +89,9 @@ namespace SimpleApi.Application.Services
 
             productToUpdate.Name = requestDto.Name;
             productToUpdate.CategoryId = requestDto.CategoryId;
+
+            productRepository.Update(productToUpdate);
+            await unitOfWork.Commit();
 
             var productResponse = mapper.Map<ProductResponseDTO>(productToUpdate);
 

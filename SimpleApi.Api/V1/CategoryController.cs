@@ -1,11 +1,10 @@
-﻿using Azure.Core;
-using FluentValidation;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleApi.Api.Controllers;
 using SimpleApi.Application.DTOs.RequestDTO;
 using SimpleApi.Application.Interfaces;
 using SimpleApi.Application.Models.BaseReponse;
-using SimpleApi.Application.Validators;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 
@@ -25,6 +24,7 @@ namespace SimpleApi.Api.V1
 
 
         [HttpGet]
+        [Authorize]
         [ProducesResponseType(typeof(BaseApiResponse<CategoryResponseDTO>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(BaseApiResponse<string>), (int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> GetAll()

@@ -4,11 +4,10 @@ using SimpleApi.Domain.Interfaces;
 
 namespace SimpleApi.Data.Repositories
 {
-    public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        public CategoryRepository(AppDbContext dbContext) : base(dbContext)
+        public UserRepository(AppDbContext dbContext) : base(dbContext)
         {
-
         }
     }
 }
